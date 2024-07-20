@@ -1,0 +1,233 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #000; /* Background color */
+    color: #fff; /* Text color */
+    overflow: hidden; /* Hide scrollbars for the orb effect */
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Orbs */
+.orb, .orb2 {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    animation: pulse 20s infinite ease-in-out;
+}
+
+.orb {
+    width: 300px;
+    height: 300px;
+    top: 20%;
+    left: 10%;
+    z-index: 1;
+}
+
+.orb2 {
+    width: 500px;
+    height: 500px;
+    top: 60%;
+    left: 70%;
+    animation: pulse2 25s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.2;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.2;
+    }
+}
+
+@keyframes pulse2 {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+}
+
+/* Main Container */
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Welcome Section */
+.welcomeSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcomeImage {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.welcomeSection h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.welcomeSection p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+/* Search Input */
+.searchInput {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#searchInput {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    width: 300px;
+    font-size: 16px;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    background: #42AD00;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#searchButton:hover {
+    background: #339900;
+}
+
+/* Weather Details */
+.weatherDetails {
+    margin-top: 20px;
+    padding: 25px; /* Adjusted padding */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px; /* Increased border radius */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 75%; /* Adjusted width */
+    max-width: 450px; /* Adjusted max width */
+    opacity: 0; /* Hidden by default */
+    transform: translateY(20px); /* Move down by 20px */
+    animation: fadeInUp 1s forwards ease-in-out; /* Fade in and move up */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+.weatherIcon img {
+    width: 80px; /* Adjusted size */
+    height: 80px; /* Adjusted size */
+}
+
+.weatherIcon h2 {
+    margin: 10px 0;
+}
+
+.cityDetails {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.desc {
+    font-size: 24px;
+    font-weight: bold;
+    color: #42AD00; /* Professional color for city name */
+    margin-bottom: 5px; /* Add space between city name and date */
+}
+
+.date {
+    font-size: 16px;
+    color: #aaa; /* Different color for date */
+}
+
+.windDetails {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Added for responsiveness */
+}
+
+.humidityBox, .windSpeed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px; /* Adjusted padding */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 10px; /* Added margin for spacing */
+    flex: 1; /* Allow boxes to grow */
+    max-width: 45%; /* Ensure boxes do not overlap */
+}
+
+.humidityBox img, .windSpeed img {
+    width: 40px; /* Adjusted size */
+    height: 40px; /* Adjusted size */
+    margin-right: 10px;
+}
+
+.humidity, .wind {
+    text-align: center;
+}
+
+.humidity h2, .wind h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Error Message */
+.error-message {
+    color: #FF0000;
+    font-size: 18px;
+    margin: 20px 0;
+}
